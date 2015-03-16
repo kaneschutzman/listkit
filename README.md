@@ -1,2 +1,10 @@
-# listkit
-listkit.co Mithril App demo.
+
+Listkit reference file.
+==========================
+
+# Dynamics.
+
+## TO BE DECIDED.
+
+-- More to come.
+
