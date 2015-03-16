@@ -1,10 +1,6 @@
 
-Listkit reference file.
+Listkit.co
 ==========================
-
-# Dynamics.
-
-## TO BE DECIDED.
 
 -- More to come.
 
