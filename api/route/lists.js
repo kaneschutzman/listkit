@@ -23,7 +23,6 @@ exports.save = function(req, res) {
 		if (list == undefined) {		
 			return res.send(401, {'err' : 'list not found'});
 		}
-		//return res.send(200, { data : list.list });
 		});
 		}
 			var newList = new List();
@@ -212,7 +211,7 @@ function cloneObjectByTemplate(obj, tpl, cloneConstructor) {
    }
    if (obj == null || typeof (obj) != 'object') return obj;
 
-   //if we have an array, work through it's contents and apply the template to each item...
+   // Array
    if (Array.isArray(obj)) {
        var ret = [];
        for (var i = 0; i < obj.length; i++) {
@@ -221,16 +220,15 @@ function cloneObjectByTemplate(obj, tpl, cloneConstructor) {
        return ret;
    }
 
-   //otherwise we have an object...
-   //var temp:any = {}; // obj.constructor(); // we can't call obj.constructor because typescript defines this, so if we are dealing with a typescript object it might reset values.
+   // Obj
    var temp = cloneConstructor ? new obj.constructor() : {};
 
    for (var key in tpl) {
-       //if we are provided with a function to determine the value of this property, call it...
+       //if we are provided with a function to determine the value of this property, call it
        if (isFunction(tpl[key])) {
            temp[key] = tpl[key](obj); //assign the result of the function call, passing in the value
        } else {
-           //if our object has this property...
+           // Obj Properties
            if (obj[key] != undefined) {
                if (Array.isArray(obj[key])) {
                    temp[key] = [];

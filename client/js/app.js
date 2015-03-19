@@ -5,7 +5,8 @@ var app = app || {};
 
     app.ENTER_KEY = 13;
 
- 	m.route.mode = 'hash';
+ 	//m.route.mode = 'hash';
+ 	m.route.mode = 'pathname';
     m.route(document.getElementById('listkit'), '/', {
         '/'        : app,
         '/:userId' : loadList
